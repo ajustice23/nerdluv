@@ -99,10 +99,11 @@
 		}
 
 		//checks for at least on matching letter of their personality
-		$firstS = substr($info[4], 0,1); // first letter of personality for the singles
-		$secondS = substr($info[4],1,1); // second letter
-		$thirdS = substr($info[4],2,1); //third letter
-		$fourthS = substr($info[4],3,1); //fourth letter
+		$matchPers = strtoupper($info[4]);
+		$firstS = substr($matchPers, 0,1); // first letter of personality for the singles
+		$secondS = substr($matchPers[4],1,1); // second letter
+		$thirdS = substr($matchPers,2,1); //third letter
+		$fourthS = substr($matchPers,3,1); //fourth letter
 
 		$firstA = substr($personality, 0,1); // first letter of personality for the account holder
 		$secondA = substr($personality,1,1); // second letter
