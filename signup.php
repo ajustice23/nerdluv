@@ -2,7 +2,7 @@
 	include("top.html");
 ?>
 <header>
-	<h1>Sign up</h1>
+	<h1>Sign Up</h1>
 </header>
 <form method="POST" action = "signup-submit.php">
 	<fieldset>
@@ -10,9 +10,9 @@
 			<label for=yourEmail>Email:</label>
 			<input type="email" name="yourEmail" id="yourEmail" placeholder="janedoe1@gmail.com" required = "required"/>
 			<label for="yourPass1">Create Password:</label>
-			<input type="text" name="yourPass1" id="yourPass1" required="required"/>
+			<input type="password" name="yourPass1" id="yourPass1" required="required"/>
 			<label for="yourPass2">Re-enter Password:</label>
-			<input type="text" name="yourPass2" id="yourPass2" required="required"/>
+			<input type="password" name="yourPass2" id="yourPass2" required="required"/>
 	</fieldset>
 	<fieldset>
 		<legend>Personal Information</legend>
@@ -21,18 +21,18 @@
 
 			<div id="gender">
 				<label for="yourGender">Gender:</label>
-				<input type="radio" name="yourGender" id="yourGender" value="male" /> Male
-				<input type="radio" name="yourGender" id="yourGender" value="female" checked="checked"/> Female
+				<input type="radio" name="yourGender" id="yourGender" value="M" /> Male
+				<input type="radio" name="yourGender" id="yourGender" value="F" checked="checked"/> Female
 			</div>
 
 			</div id="seeking"?
 				<label>Seeking:<label/>
-				<input type="checkbox" name="male" />Male
-				<input type="checkbox" name="female"/>Female
+				<input type="checkbox" name="male" required="required"/>Male
+				<input type="checkbox" name="female" required="required"/>Female
 			</div>
 
 			<label for="yourAge">Age:</label>
-			<input type="text" name="yourAge" id="yourAge" size="6" pattern="[0-9]{1,2}" maxlength="2" required="required"/> (0-99)
+			<input type="number" name="yourAge" id="yourAge" min="16" max="99" required="required"/> (16-99)
 			
 			<label for="yourPers">Personality Type:</label>
 			<input type = "text" name="yourPers" id="yourPers" required="required" placeholder="eg. ESFJ" pattern="[eiEI][snSn][tfTF][jpJP]" maxlength="4" size = "8"> 
@@ -48,10 +48,10 @@
 			<div>
 
 			<label>Seeking Age:</label>
-			<input type="text" name="minAge" id="minAge" required="required" maxlength="2" size="6" pattern="[0-9]{1-2}" placeholder="min"/> to 
-			<input type="text" name="maxAge" id="minAge" required="required" maxlength="2" size="6" pattern="[0-9]{1-2}" placeholder="max"/>
+			<input type="number" name="minAge" id="minAge" required="required" min="16" max="99" /> to 
+			<input type="number" name="maxAge" id="minAge" required="required" min="16" max="99"/>
 	</fieldset>
-	<input class="submit" type="submit" value="Sign Up"/>
+	<input class="submit" id="signUpSubmit" type="submit" value="Sign Up"/>
 </form>
 <?php
 	include("bottom.html");
