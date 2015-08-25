@@ -50,3 +50,21 @@ Valentina Tereshkova,F,M,71,ENTJ,Mac OS X,55,65
 Vint Cerf,M,F,67,ISFP,Mac OS X,28,55
 Yukihiro Matsumoto,M,M,45,ENTP,Mac OS X,10,25
 Zelda,F,M,59,ESTP,Windows,40,62
+Hello,F,M,16,intp,Windows,16,99
+Hello1,F,MF,35,esfj,Windows,23,99
+George,F,F,24,esfj,Windows,25,45
+You,M,M,24,intp,Mac OS X,20,60
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54
+why,F,M,23,esfj,Windows,34,54

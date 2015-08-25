@@ -1,6 +1,8 @@
 <?php
 	include("top.html");
 
+	
+
 	$email = $_POST["yourEmail"];
 	$pass = $_POST["yourPass1"];
 	$name = $_POST["yourName"];
@@ -24,6 +26,8 @@
 
 	file_put_contents("singlesTest.txt", "$name,$gender,$seeking,$age,$pers,$OS,$seekAgeMin,$seekAgeMax\n",FILE_APPEND);
 	file_put_contents("accounts.txt", "$email,$pass,$name\n",FILE_APPEND);
+
+
 ?>
 <header>
 	<h1>Thank you!</h1>

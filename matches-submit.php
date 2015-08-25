@@ -4,19 +4,25 @@
 //ini_set('display_startup_errors',1);
 //error_reporting(-1);
 	include("top.html");
+	include("common.php");
+?>
+<header>
+	<h1>Matches</h1>
+</header>
+<article>
+<?php
 	$email = $_POST["yourEmailLogin"];
 	$pass = $_POST["yourPassLogin"];
-	$singleFileName = "singlesTest.txt";
+	
 	$accountFileName = "accounts.txt";
 	$accountFile = file_get_contents($accountFileName);
+	$singleFileName = "singlesTest.txt";
 	$singlesFile = file_get_contents($singleFileName);
 	$singlesFile = str_replace(',,,,,,,,','', $singlesFile);//takes out all empty lines
-
+  
 
 	$accounts = explode("\n",$accountFile); //every member of the array is an account 
-	//$accounts = array_filter($accounts);
 	$singles = explode("\n",$singlesFile); //every member of the array is a different single
-	//$singles = array_filter($singles);
 
 	//print_r ($accounts);
 	//print_r ($singles);
@@ -38,24 +44,24 @@
 		}
 	}
 
-
+	$rightAccountInfo = checkEmailandPass();
 
 	if($hasAccount && $rightPass){
+	//if($rightAccountInfo == 2){
+		foreach($singles as $line){
+			$info=explode(',',$line);
 
-	foreach($singles as $line){
-		$info=explode(',',$line);
-
-		if($name == $info[0] ){
-			$gender = $info[1];
-			$seeking=$info[2];
-			$age = $info[3];
-			$personality = strtoupper($info[4]);
-			$OS = $info[5];
-			$minAge = $info[6];
-			$maxAge = $info[7];
-			break;
+			if($name == $info[0] ){
+				$gender = $info[1];
+				$seeking=$info[2];
+				$age = $info[3];
+				$personality = strtoupper($info[4]);
+				$OS = $info[5];
+				$minAge = $info[6];
+				$maxAge = $info[7];
+				break;
+			}
 		}
-	}
 	
 
 	foreach($singles as $line){
@@ -135,26 +141,48 @@
 		}
 
 		if($match){
-			print_r($line);
+			//print_r($line);
+			echo '<p class="match">';
+			echo '<h3>';
+			echo $info[0];
+			echo "</h3>\n";
+			echo "<ul>\n";
+			echo '<li>Gender: ';
+
+			if($info[1] == "M"){
+				echo "Male";
+			}else{
+				echo "Female";
+			}
+			echo "</li>\n";
+			echo "<li>Age: ";
+			echo $info[3];
+			echo "</li>\n";
+			echo "<li>Personality Type: ";
+			echo $info[4];
+			echo "</li>\n";
+			echo "<li>Favorite OS: ";
+			echo $info[5];
+			echo "</li>\n";
+			echo '</ul>';
+
+			echo '</p>';
 		}
 
 	}
 
 	}else if($hasAccount){
-		echo "has account but wrong password";
+  	echo '<p id = "wrongPass">Your password is incorrect.</p>';
 	}else{
-		echo "no account";
+		echo '<p id = "noAccount">You don\'t appear to have an account. Either reenter your email and password or <a href="signup.php">sign up</a> for a new account.</p>';
 
 	}
 
 
 ?>
-<header>
-	<h1>Matches for <?= $name; ?> </h1>
-</header>
-<article>
-	<p hidden id="incorrect">Your password is incorrect.</p>
-	<p hidden id="no account">You don't appear to have an account. Either reenter your email and password or <a href="signup.php">sign up</a> for a new account.</p>
+
+
+	
 </article>
 <?php
 	include("bottom.html");
