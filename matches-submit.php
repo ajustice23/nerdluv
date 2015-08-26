@@ -1,13 +1,9 @@
 
 <?php
-//ini_set('display_errors',1);
-//ini_set('display_startup_errors',1);
-//error_reporting(-1);
 	include("top.html");
-	include("common.php");
 ?>
-<header>
-	<h1>Matches</h1>
+<header class="matches-submit">
+<h1>Matches</h1>
 </header>
 <article>
 <?php
@@ -44,10 +40,10 @@
 		}
 	}
 
-	$rightAccountInfo = checkEmailandPass();
+
 
 	if($hasAccount && $rightPass){
-	//if($rightAccountInfo == 2){
+	
 		foreach($singles as $line){
 			$info=explode(',',$line);
 
@@ -83,6 +79,7 @@
 			$yourSelf = false;
 		}
 
+		//gender decisions
 		if($seeking == "MF"){//checks to see if the right gender
 			$rightGender = true;
 		}else if($seeking == $info[1]){
@@ -142,7 +139,10 @@
 
 		if($match){
 			//print_r($line);
-			echo '<p class="match">';
+			
+			echo '<div class="matches-submit">';
+			echo '<img src="",alt="match picture", width=100,height=100/>';
+			echo '<div id = "matchinfo">';
 			echo '<h3>';
 			echo $info[0];
 			echo "</h3>\n";
@@ -154,6 +154,7 @@
 			}else{
 				echo "Female";
 			}
+
 			echo "</li>\n";
 			echo "<li>Age: ";
 			echo $info[3];
@@ -164,18 +165,16 @@
 			echo "<li>Favorite OS: ";
 			echo $info[5];
 			echo "</li>\n";
-			echo '</ul>';
-
-			echo '</p>';
+			echo "</ul>\n";
+			echo "</div>\n";
+			echo "</div>\n";
 		}
-
 	}
 
 	}else if($hasAccount){
-  	echo '<p id = "wrongPass">Your password is incorrect.</p>';
+	  	echo '<p class = "wrong">Your password is incorrect.</p>';
 	}else{
-		echo '<p id = "noAccount">You don\'t appear to have an account. Either reenter your email and password or <a href="signup.php">sign up</a> for a new account.</p>';
-
+		echo '<p class= "wrong">You don\'t appear to have an account. Either re-enter your email and password or <a href="signup.php">sign up</a> for a new account.</p>';
 	}
 
 

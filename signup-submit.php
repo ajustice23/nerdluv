@@ -1,8 +1,6 @@
 <?php
 	include("top.html");
 
-	
-
 	$email = $_POST["yourEmail"];
 	$pass = $_POST["yourPass1"];
 	$name = $_POST["yourName"];
@@ -26,17 +24,16 @@
 
 	file_put_contents("singlesTest.txt", "$name,$gender,$seeking,$age,$pers,$OS,$seekAgeMin,$seekAgeMax\n",FILE_APPEND);
 	file_put_contents("accounts.txt", "$email,$pass,$name\n",FILE_APPEND);
-
-
 ?>
-<header>
+<div class="signup-submit">
+<header class="signup-submit">
 	<h1>Thank you!</h1>
 </header>
-
-<article>
-	<p>Welcome to NerdLuv, <?=$name; ?>!</p>
-	<p>Now <a href="matches.php"> log in </a>to see your matches!</p>
+<article class="signup-submit">
+	<p>Welcome to NerdLuv, <em><?=$name; ?></em>!</p>
+	<p>Now <a href="matches.php" class="longinlink">log in</a> to see your matches!</p>
 </article>
+</div>
 
 <?php
 	include("bottom.html");

@@ -1,0 +1,111 @@
+body {
+  font-family: verdana;
+  color: "#797979";
+}
+
+fieldset {
+  margin-bottom: 15px;
+}
+
+form {
+  border: groove;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 20px;
+  background-color: #FFE6E6;
+  color: black;
+  margin-left: 1em;
+}
+
+div.matches-submit {
+  border: groove;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 20px;
+  background-color: #FFE6E6;
+  color: black;
+  margin-left: 1em;
+  margin-bottom:1em;
+}
+label {
+  display: inline-block;
+  width: 10em;
+  text-align: right;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+legend {
+  font-family: arial;
+  font-weight: bold;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+
+input[type="submit"] {
+  margin-top: 1em;
+}
+
+.intro {
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+#signUpSubmit {
+  font-family: verdana;
+  border-radius: 1px;
+}
+
+div.signup-submit{
+  border:groove;
+  border-radius:15px;
+  padding:20px;
+  background-color: #FFE6E6;
+  color:black;
+  margin-left: 1em auto;
+}
+
+article.signup-submit{
+ font-family:verdana;
+ color:#797979;
+ width: 900px;
+ margin: 0 auto;
+ text-align: center;
+}
+
+header.signup-submit{
+  font-family:verdana;
+  color:#797979;
+  width:900px;
+  margin:0 auto;
+  text-align: center;
+}
+header.matches-submit{
+   font-family:verdana;
+  color:#797979;
+  width:900px;
+  margin:0;
+}
+a:link{
+  text-decoration: none;
+}
+
+a:visited{
+ text-decoration:none;
+ color: #BC3CBC;
+}
+
+a:hover{
+ text-decoration:underline;
+}
+
+a:active{
+ text-decoration:underline;
+}
+p.wrong{
+  font-size: 1.5em;
+}
+
+p.bottom{
+  font-size: .8em;
+}
